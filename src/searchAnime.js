@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import {useState, useEffect} from "react";
+import AnimeInfo from "./animeInfo"
 
 function SearchAnime () {
 
@@ -6,24 +7,29 @@ function SearchAnime () {
     let page = 1 ;
     let [previousPageButton, setPreviousPageButton] = useState([])
     let [nextPageButton, setNextPageButton] = useState([])
-    let [markup, setMarkup] = useState([])
+    let [searchMarkup, setSearchMarkup] = useState([])
+    let [aniInfo, setAniInfo] = useState([])
 
     function handleTitleInput(event) {
         setTitle(event.target.value)
     }
-    function handleLimitInput(event) {
-        setLimit(event.target.value)
+
+    function handleAnimeClick(event) {
+        setPreviousPageButton([])
+        setNextPageButton([])
+        setSearchMarkup(<AnimeInfo id={event.currentTarget.id}/>)
+
     }
 
     function nextPage() {
         page += 1;
-        setMarkup([]);
+        setSearchMarkup([]);
         searchForAnime();
     }
 
     function previousPage() {
         page -= 1;
-        setMarkup([]);
+        setSearchMarkup([]);
         searchForAnime();
     }
 
@@ -52,25 +58,16 @@ function SearchAnime () {
                 setNextPageButton([])
             }
 
-            //data.data[n].title
-            //data.data[n].title_english
-            //data.data[n].images.jpg.image_url
-            //data.data[n].mal_id
-            //data.data[n].episodes
-
-            //data.pagination.has_next_page
-
-            setMarkup (data.data.map(function (i) {
+            setSearchMarkup (data.data.map(function (i) {
                 return(
-                    <div key={i.mal_id}>
-                        <img src={i.images.jpg.image_url} width={280} alt="" />
+                    <div onClick={handleAnimeClick} id={i.mal_id}>
+                        <img src={i.images.jpg.image_url} width={280} alt=""/>
                         <p>Title: {i.title}</p>
                         <p>English Title: {i.title_english}</p>
                         <p>No. of Ep: {i.episodes}</p>
                     </div>
                 )
             }));
-            console.log(markup);
 
         }
 
@@ -81,15 +78,18 @@ function SearchAnime () {
         fetch(apiEndpoint).then(turnResponseIntoObject).then(handleInformation)
     }
 
+    
     return (
         <div>
             <h1>Search Anime</h1>
             <input onInput={handleTitleInput} title="Title" value={title} type="text" />
             <button onClick={newSearch}>Search</button>
+            <p></p>
             {previousPageButton}
             {nextPageButton}
+            <p></p>
             <div id="grid">
-                {markup}
+                {searchMarkup}
             </div>
             
         </div>

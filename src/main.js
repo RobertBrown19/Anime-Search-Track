@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import SearchAnime from "./searchAnime";
+import App from "./app";
 
 //This is a React component
 // - It needs to be UpperCamelCased
@@ -9,7 +9,7 @@ import SearchAnime from "./searchAnime";
 function App() {
     return (
         <div>
-            <SearchAnime />
+            <App />
         </div>
     );
 }
