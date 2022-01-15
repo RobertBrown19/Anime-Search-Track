@@ -16,7 +16,7 @@ function App() {
     return (
         <div>
             <button onClick={searchAnime}>Search Anime</button>
-            <button onClick={trackAnime}>Track Anime</button>
+            {/* <button onClick={trackAnime}>Track Anime</button> */}
             {appMarkup}
         </div>
     );
