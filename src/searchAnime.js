@@ -8,7 +8,6 @@ function SearchAnime () {
     let [previousPageButton, setPreviousPageButton] = useState([])
     let [nextPageButton, setNextPageButton] = useState([])
     let [searchMarkup, setSearchMarkup] = useState([])
-    let [aniInfo, setAniInfo] = useState([])
 
     function handleTitleInput(event) {
         setTitle(event.target.value)

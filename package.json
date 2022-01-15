@@ -1,7 +1,7 @@
 {
   "name": "finalproject",
   "version": "1.0.0",
-  "description": "",
+  "description": "This app will  - Allow you search an anime database - Get more info on a selected anime - Add a selected anime to a tracking database - View a list of tracked anime - Add your current watched eppisode to a tracked anime",
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
@@ -17,5 +17,14 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-player": "^2.9.0"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobertBrown19/Anime-Search-Track.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RobertBrown19/Anime-Search-Track/issues"
+  },
+  "homepage": "https://github.com/RobertBrown19/Anime-Search-Track#readme"
 }

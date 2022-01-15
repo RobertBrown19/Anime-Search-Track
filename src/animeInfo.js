@@ -3,7 +3,7 @@ import ReactPlayer from "react-player"
 
 function AnimeInfo(id){
 
-    let [markup, setMarkup] = useState([<p>Loading...</p>])
+    let [aniMarkup, setAniMarkup] = useState([<p>Loading...</p>])
     function turnResponseIntoObject(res) {
         return res.json();
     }
@@ -25,7 +25,7 @@ function AnimeInfo(id){
         // data.data.type
         // data.data.year
 
-        setMarkup (
+        setAniMarkup (
             [<div>
                 <img src={data.data.images.jpg.large_image_url} alt=""/>
                 <p>Title: {data.data.title}</p>
@@ -44,7 +44,7 @@ function AnimeInfo(id){
         fetch(apiEndpoint).then(turnResponseIntoObject).then(handleInformation)
     }, [])
     
-    return markup
+    return aniMarkup
 }
 
 export default AnimeInfo;
