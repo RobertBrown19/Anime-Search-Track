@@ -4,7 +4,7 @@
     grid-template-columns: repeat(4, auto);
 }
 
-.video-responsive {
+/* .video-responsive {
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -19,7 +19,7 @@
     right: 0;
     width: 100%;
     height: 100%;
-}
+} */
 
 @media (max-width: 1150px) {
     #grid {

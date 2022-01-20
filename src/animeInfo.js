@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import ReactPlayer from "react-player"
+// import ReactPlayer from "react-player"
 
 function AnimeInfo(id){
 
@@ -32,7 +32,7 @@ function AnimeInfo(id){
                 <p>English Title: {data.data.title_english}</p>
                 <p>{data.data.synopsis}</p>
                 <p>No. of Ep: {data.data.episodes}</p>
-                <div className="video-responsive"><ReactPlayer url={data.data.trailer.embed_url} /></div>  
+                {/* <div className="video-responsive"><ReactPlayer url={data.data.trailer.embed_url} /></div> */}
             </div>]
         )
 
